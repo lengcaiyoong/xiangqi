@@ -13,7 +13,18 @@ g <- function(){
 
 q <- g() #variable q as qi2 pu3   
 
-c =  "  q[0,0]<-'.' ; q[0,0]<-'a'  ; q" #modify 0 and 'a'
-writeClipboard(c)  #copy to clipboard
+#c =  "  q[0,0]<-'.' ; q[0,0]<-'a'  ; q" #modify 0 and 'a'
+#writeClipboard(c)  #copy to clipboard
+
+
+c = "qi='Q' 
+r1=0
+c1=0
+r2=0
+c2=0
+  q[r1,c1]<-'.' ; q[r2,c2]<-qi  ; q"  #modify r1,c1,r2,c2,qi
+
+writeClipboard(c)
+
 
 q #start
