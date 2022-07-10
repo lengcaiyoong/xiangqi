@@ -12,7 +12,6 @@ g <- function(){
 	}
 q <- g()
 
-cls()
-	 print( "  q[0,0]<-'.' ; q[0,0]<-'a'  ; q  ")
+ ( "  q[0,0]<-'.' ; q[0,0]<-'a'  ; q  ") #modify 0 and 'a'
 
-q
+q #start
