@@ -22,8 +22,8 @@ r1=0
 c1=0
 r2=0
 c2=0
-x <- q
-  q[r1,c1]<-'.' ; q[r2,c2]<-qi  ; q"  #modify r1,c1,r2,c2,qi
+
+x <- q ; q[r1,c1]<-'.' ; q[r2,c2]<-qi  ; q"  #modify r1,c1,r2,c2,qi
 
 writeClipboard(c)
 
