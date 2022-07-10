@@ -9,9 +9,11 @@ g <- function(){
 	 state[4,] <- c(rep(c('Z','.'),4),'Z')
 	 state[7,] <- c(rep(c('b','.'),4),'b')
 	 state
-	}
-q <- g()
+	}  #create qi2 pu3
 
- ( "  q[0,0]<-'.' ; q[0,0]<-'a'  ; q  ") #modify 0 and 'a'
+q <- g() #variable q as qi2 pu3   
+
+c =  "  q[0,0]<-'.' ; q[0,0]<-'a'  ; q" #modify 0 and 'a'
+writeClipboard(c)  #copy to clipboard
 
 q #start
