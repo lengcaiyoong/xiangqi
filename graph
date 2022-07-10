@@ -1,0 +1,13 @@
+g <- function(){ 
+	 state <- data.frame(matrix('.',10,9))  
+	 state[1,] <- c("J","M","X","S","J","S","X","M","J")
+	 state[10,] <- tolower( c("J","M","X","S","J","S","X","M","J"))
+	 state[3,2] <- "P"
+	 state[3,8] <- "P"
+	 state[8,2] <- 'a'
+	 state[8,8] <- 'a'
+	 state[4,] <- c(rep(c('Z','.'),4),'Z')
+	 state[7,] <- c(rep(c('b','.'),4),'b')
+	 state
+
+	}
