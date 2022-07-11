@@ -63,8 +63,8 @@ p(q)
 
 
 ##clipboard
-copy_str = 'L <- append(L,list(q)); n() -> q'
-writeClipboard(copy_str)
+next = 'L <- append(L,list(q)); n() -> q'
+writeClipboard(next)
 
 #start
 t(); p(q)
