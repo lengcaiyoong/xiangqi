@@ -1,0 +1,50 @@
+
+g <- function(){ 
+	 state <- matrix('.',10,9)
+	 state[1,] <- c("C","M","X","S","J","S","X","M","C")
+	 state[10,] <- tolower( c("C","M","X","S","J","S","X","M","C"))
+	 state[3,2] <- "P"
+	 state[3,8] <- "P"
+	 state[8,2] <- 'a'
+	 state[8,8] <- 'a'
+	 state[4,] <- c(rep(c('Z','.'),4),'Z')
+	 state[7,] <- c(rep(c('b','.'),4),'b')
+	 state
+	}  #create qi2 pu3
+
+#Declare empty var q and L 
+q <- matrix('=',11,9) ; q[-6,] <- g()   #variable q as qi2 pu3   
+L <- list() #create L list
+
+#Declare F(x)
+
+#print without quotes
+p <- function(q){
+	print(q,quote= F)		
+	} 
+
+
+#reset
+r <- function(){
+	q <- matrix('=',11,9) 
+	q[-6,] <- g()
+	L <- list()
+	p(q())
+}
+
+
+#next step
+n <- function(){
+
+input_info = readline(prompt = "")
+qi = unlist(strsplit(input_info,' '))[1]
+r1 = as.integer(unlist(strsplit(input_info,' '))[2])
+c1 = as.integer(unlist(strsplit(input_info,' '))[3])
+r2 = as.integer(unlist(strsplit(input_info,' '))[4])
+c2 = as.integer(unlist(strsplit(input_info,' '))[5])
+L <- append(L,list(q)) ; q[r1,c1]<-'.' ; q[r2,c2]<-qi  ; p(q)  #modify qi, r1,c1,r2,c2
+
+}
+
+
+p(q) #start
