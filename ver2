@@ -1,4 +1,5 @@
 
+##Create qi pu
 g <- function(){ 
 	 state <- matrix('.',10,9)
 	 state[1,] <- c("C","M","X","S","J","S","X","M","C")
@@ -12,11 +13,13 @@ g <- function(){
 	 state
 	}  #create qi2 pu3
 
-#Declare empty var q and L 
+##Declare empty var q and L 
 q <- matrix('=',11,9) ; q[-6,] <- g()   #variable q as qi2 pu3   
 L <- list() #create L list
 
-#Declare F(x)
+
+
+##Declare F(x)
 
 #print without quotes
 p <- function(q){
@@ -36,7 +39,7 @@ r <- function(){
 #next step
 n <- function(){
 
-input_info = readline(prompt = "")
+input_info = readline(prompt = "ENTER: ")
 qi = unlist(strsplit(input_info,' '))[1]
 r1 = as.integer(unlist(strsplit(input_info,' '))[2])
 c1 = as.integer(unlist(strsplit(input_info,' '))[3])
