@@ -22,16 +22,16 @@ p <- function(q){
 #writeClipboard(c)  #copy to clipboard
 
 
-c = "qi='Q' 
+c = "#reset
+#q <- matrix('=',11,9) ; q[-6,] <- g()  ; L <- list()
+
+qi='Q' 
 r1=0
 c1=0
 r2=0
 c2=0
 
-L <- append(L,list(q)) ; q[r1,c1]<-'.' ; q[r2,c2]<-qi  ; p(q)  #modify qi, r1,c1,r2,c2
-
-#reset
-#q <- matrix('=',11,9) ; q[-6,] <- g()  ; L <- list()"  
+L <- append(L,list(q)) ; q[r1,c1]<-'.' ; q[r2,c2]<-qi  ; p(q)  #modify qi, r1,c1,r2,c2"  
 
 writeClipboard(c)
 
