@@ -11,7 +11,7 @@ g <- function(){
 	 state
 	}  #create qi2 pu3
 
-q <- g() #variable q as qi2 pu3   
+q <- matrix('=',11,9) ; q[-6,] <- g()   #variable q as qi2 pu3   
 L <- list() #create L list
 
 p <- function(q){
