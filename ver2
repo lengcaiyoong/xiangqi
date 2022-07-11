@@ -57,10 +57,15 @@ r1 = as.integer(unlist(strsplit(input_info,' '))[2])
 c1 = as.integer(unlist(strsplit(input_info,' '))[3])
 r2 = as.integer(unlist(strsplit(input_info,' '))[4])
 c2 = as.integer(unlist(strsplit(input_info,' '))[5])
-L <- append(L,list(q))
+
 q[r1,c1]<-'.'
 q[r2,c2]<-qi
-p(q) 
+p(q)
 }
 
-t(); p(q) #start
+
+##clipboard
+copy_str = 'L <- append(L,list(q)); n() -> q'
+writeClipboard(copy_str)
+
+t(); p(q) #start with CTRL + V
