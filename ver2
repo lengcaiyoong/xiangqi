@@ -6,7 +6,7 @@ p(q)	: display current qi pu
 p(L)	: lists of qi pu
 g()	: create new qi pu
 n()	: next step; format [C 1 1 3 1]
-to reset: L[1] -> L; L[[1]] -> q
+to reset: list() -> L ; g() -> q
 
 'START with CTRL + V'
 
@@ -25,11 +25,13 @@ g <- function(){
 	 state[8,8] <- 'a'
 	 state[4,] <- c(rep(c('Z','.'),4),'Z')
 	 state[7,] <- c(rep(c('b','.'),4),'b')
-	 state
+	g <- matrix('=',11,9)
+	g[-6,] <- state 
+	return(g)
 	}  #create qi2 pu3
 
 ##Declare empty var q and L 
-q <- matrix('=',11,9) ; q[-6,] <- g()   #variable q as qi2 pu3   
+q <- g()   #variable q as qi2 pu3   
 L <- list() #create L list
 
 
