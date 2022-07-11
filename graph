@@ -1,5 +1,5 @@
 g <- function(){ 
-	 state <- data.frame(matrix('.',10,9))  
+	 state <- matrix('.',10,9)
 	 state[1,] <- c("C","M","X","S","J","S","X","M","C")
 	 state[10,] <- tolower( c("C","M","X","S","J","S","X","M","C"))
 	 state[3,2] <- "P"
@@ -14,6 +14,10 @@ g <- function(){
 q <- g() #variable q as qi2 pu3   
 L <- list() #create L list
 
+p <- function(q){
+	print(q,quote= F)		
+	}  #print without quotes
+
 #c =  "  q[0,0]<-'.' ; q[0,0]<-'a'  ; q" #modify 0 and 'a'
 #writeClipboard(c)  #copy to clipboard
 
@@ -24,9 +28,9 @@ c1=0
 r2=0
 c2=0
 
-L <- append(L,list(q)) ; q[r1,c1]<-'.' ; q[r2,c2]<-qi  ; q"  #modify r1,c1,r2,c2,qi
+L <- append(L,list(q)) ; q[r1,c1]<-'.' ; q[r2,c2]<-qi  ; p(q)"  #modify r1,c1,r2,c2,qi
 
 writeClipboard(c)
 
 
-q #start
+p(q) #start
