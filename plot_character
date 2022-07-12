@@ -10,25 +10,25 @@ plot(x,y,xlim=c(0,1),ylim=c(0,1) , type='n',ann=F)
 abline(h=y, v=x, lty=3)	#set blank graph
 
 rect(
-x[2]-1/9,y[2]-1/11,x[2],y[2],
+x[10]-1/9,y[12]-1/11,x[10],y[12],
 col='red')
 
 points(
-x[2]/2,
-y[2]/2,
+(x[2] - (1/9)/2),
+(y[2] - (1/11)/2),
 pch=96+2)
 
 
 #plot point
 points(
-((x[col(m)+1])[i])/2,
-((y[row(m)[nrow(m):1,]+1])[i])/2,
+((x[col(m)+1])[i])-(1/9/2),
+((y[row(m)[nrow(m):1,]+1])[i])-(1/11/2),
 pch=(grep(m[i],letters) + 96),
 col='black')
 
 points(
-((x[col(m)+1])[i])/2,
-((y[row(m)[nrow(m):1,]+1])[i])/2,
+((x[col(m)+1])[i])-(1/9/2),
+((y[row(m)[nrow(m):1,]+1])[i])-(1/11/2),
 pch=(grep(m[i],LETTERS) + 64),
 col='white')
 
