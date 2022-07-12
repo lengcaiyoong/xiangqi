@@ -102,6 +102,8 @@ for (i in grep(up,m)) {
 		col='white')
 			}	#plot LETTERS
 
+rect(0, seq(0,1,1/11)[6],1,seq(0,1,1/11)[7], col='lightblue') #river
+
 }
 
 
