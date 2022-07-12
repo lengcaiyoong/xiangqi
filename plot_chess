@@ -1,5 +1,4 @@
-
-#for loop position
+###plot chess
 p_c <- function(m){
 
 
@@ -29,7 +28,7 @@ for (i in grep(lw,m)) {
 	}	#plot lowercase chess
 
 for (i in grep(up,m)) {
-	col <- 'black'
+	col <- 'grey'
 	plot_chess(i,col)
 	}	#plot uppercase chess
 
