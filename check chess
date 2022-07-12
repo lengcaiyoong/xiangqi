@@ -1,6 +1,10 @@
 ##Show only intended elements
    # for multiple patterns, eg. show(q,'1|J0')
 
+##declare upper and lower variable
+   up = "[[:upper:]]"
+   lw = "[[:lower:]]"
+
 show <- function(matrix,toshow){
    matrix[-grep(toshow,matrix)] <- ''
    p(matrix)
