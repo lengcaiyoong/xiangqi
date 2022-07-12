@@ -1,4 +1,5 @@
 ##Show only intended elements
+   # for multiple patterns, eg. show(q,'1|J0')
 
 show <- function(matrix,toshow){
    matrix[-grep(toshow,matrix)] <- ''
