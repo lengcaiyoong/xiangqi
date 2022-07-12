@@ -1,3 +1,4 @@
+
 ###Tutorial
     t <- function(){
     cat("
@@ -14,8 +15,7 @@
 
     'START with CTRL + V'
 
-    ")
-    }
+")}
 
 
 #### Declare F(x)
@@ -85,14 +85,30 @@ rect(
 for (i in grep(lw,m)) {
 	col <- 'red'
 	plot_chess(i,col)
+points(
+((x[col(m)+1])[i])-(1/9/2),
+((y[row(m)[nrow(m):1,]+1])[i])-(1/11/2),
+pch=(grep(m[i],letters) + 96),
+col='black')
 	}	#plot lowercase chess
 
 for (i in grep(up,m)) {
 	col <- 'grey'
 	plot_chess(i,col)
+points(
+((x[col(m)+1])[i])-(1/9/2),
+((y[row(m)[nrow(m):1,]+1])[i])-(1/11/2),
+pch=(grep(m[i],LETTERS) + 64),
+col='white')
 	}	#plot uppercase chess
 
 }
+
+
+
+
+
+
 
 
 
