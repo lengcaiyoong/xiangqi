@@ -5,6 +5,8 @@
 ##declare upper and lower variable
    up = "[[:upper:]]"
    lw = "[[:lower:]]"
+   upj= "[[:upper:]]|j"
+   lwj= "[[:lower:]]|J"
    
 show <- function(matrix,toshow){
    matrix[-grep(toshow,matrix)] <- ''
