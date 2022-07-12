@@ -1,0 +1,5 @@
+##Show only intended elements
+
+show <- function(matrix,toshow){
+   matrix[-grep('toshow',matrix)] <- ''
+}
