@@ -2,8 +2,8 @@
    # for multiple patterns, eg. show(q,'1|J0')
 
 ##declare upper and lower variable
-   up = "[[:upper:]]|j"
-   lw = "[[:lower:]]|J"
+   up = "[[:upper:]]"
+   lw = "[[:lower:]]"
 
 show <- function(matrix,toshow){
    matrix[-grep(toshow,matrix)] <- ''
