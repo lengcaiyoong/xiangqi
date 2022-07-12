@@ -1,0 +1,70 @@
+##Tutorial
+t <- function(){
+cat("
+Tutorial:
+writeClipboard(N): next step; format [C 1 1 3 1]
+p(q)	: display current qi pu
+p(L)	: lists of qi pu
+g()	: create new qi pu
+to reset: list() -> L ; g() -> q
+
+'START with CTRL + V'
+
+")
+}
+
+
+##Create qi pu
+g <- function(){ 
+	 state <- matrix('.',10,9)
+	 state[1,] <- c("C","M","X","S","J","S","X","M","C")
+	 state[10,] <- tolower( c("C","M","X","S","J","S","X","M","C"))
+	 state[3,2] <- "P"
+	 state[3,8] <- "P"
+	 state[8,2] <- 'p'
+	 state[8,8] <- 'p'
+	 state[4,] <- c(rep(c('Z','.'),4),'Z')
+	 state[7,] <- c(rep(c('b','.'),4),'b')
+	g <- matrix('=',11,9)
+	g[-6,] <- state 
+	return(g)
+	}  #create qi2 pu3
+
+##Declare empty var q and L 
+q <- g()   #variable q as qi2 pu3   
+L <- list() #create L list
+
+
+
+##Declare F(x)
+
+#print without quotes
+p <- function(q){
+	print(q,quote= F)		
+	} 
+
+
+
+
+#next step
+n <- function(){
+
+input_info = readline(prompt = "ENTER: ")
+qi = unlist(strsplit(input_info,' '))[1]
+r1 = as.integer(unlist(strsplit(input_info,' '))[2])
+c1 = as.integer(unlist(strsplit(input_info,' '))[3])
+r2 = as.integer(unlist(strsplit(input_info,' '))[4])
+c2 = as.integer(unlist(strsplit(input_info,' '))[5])
+
+q[r1,c1]<-'.'
+q[r2,c2]<-qi
+p(q)
+}
+
+
+##clipboard
+N = 'L <- append(L,list(q)); n() -> q'
+writeClipboard(N)
+
+#start
+t(); p(q)
