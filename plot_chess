@@ -1,3 +1,5 @@
+
+#for loop position
 p_c <- function(m){
 
 
@@ -9,10 +11,13 @@ abline(h=y, v=x, lty=3)	#set blank graph
 
 plot_chess <- function(i,col){
 rect(
-	(x[row(m)[nrow(m):1,]+1])[i] - 1/9,
-	(y[col(m)+1])[i] - 1/11,
-	(x[row(m)[nrow(m):1,]+1])[i],
-	(y[col(m)+1])[i],
+
+	(x[col(m)+1])[i] - 1/9,
+	(y[row(m)[nrow(m):1,]+1])[i] - 1/11,
+
+	(x[col(m)+1])[i],
+	(y[row(m)[nrow(m):1,]+1])[i],
+
 	col=col
 	)
 } #plot fx
