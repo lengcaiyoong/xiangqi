@@ -1,0 +1,31 @@
+p_c <- function(m){
+
+
+x <- seq(0,1+(2/9),1/9)	#set X-axis interval
+y <- seq(0,1,1/11)	#set Y-axis interval
+
+plot(x,y,xlim=c(0,1),ylim=c(0,1) , type='n',ann=F)
+abline(h=y, v=x, lty=3)	#set blank graph
+
+plot_chess <- function(i,col){
+rect(
+	(x[row(m)[nrow(m):1,]+1])[i] - 1/9,
+	(y[col(m)+1])[i] - 1/11,
+	(x[row(m)[nrow(m):1,]+1])[i],
+	(y[col(m)+1])[i],
+	col=col
+	)
+} #plot fx
+
+
+for (i in grep(lw,m)) {
+	col <- 'red'
+	plot_chess(i,col)
+	}	#plot lowercase chess
+
+for (i in grep(up,m)) {
+	col <- 'black'
+	plot_chess(i,col)
+	}	#plot uppercase chess
+
+}
