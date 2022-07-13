@@ -9,3 +9,13 @@ pp2 <- function(i){
 q[!grepl(i,q)] <- c(1:99)[!grepl(i,q)]
 p(q)
 }
+
+
+pp3 <- function(i){
+  #q[!grepl(i,q)] <- c(1:99)[!grepl(i,q)]	#show only numbers
+q[!grepl('[A-Za-z]',q)] <- c(1:99)[!grepl('[A-Za-z]',q)]	#show letters and numbers
+
+q[grep(i,q)] <- '..'
+q[6,] <- rep('=',9)
+p(q)
+}
