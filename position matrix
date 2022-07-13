@@ -1,0 +1,11 @@
+pp <- function(i){
+
+q[grep(i,q)] <- grep(i,q)
+p(q)
+}
+
+
+pp2 <- function(i){
+q[!grepl(i,q)] <- c(1:99)[!grepl(i,q)]
+p(q)
+}
