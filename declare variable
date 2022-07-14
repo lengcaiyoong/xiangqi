@@ -1,9 +1,19 @@
-qizi = 
-matrix(
-c(
-tolower(c("C","M","X","S","J","P","b")),
-'\u8eca','\U99AC','\U76F8','\U4ED5','\U5E25','\U70AE','\U5175',
-"C","M","X","S","J","P","Z",
-'\u8eca', '\U99AC', '\U8C61', '\U58EB','\U5C07','\U70AE','\U5352'
-)
-,ncol=4)
+
+##all chess
+  qizi <- matrix(
+    c(
+      tolower(c("C","M","X","S","J","P","b")),
+      '\u8eca','\U99AC','\U76F8','\U4ED5','\U5E25','\U70AE','\U5175',
+      "C","M","X","S","J","P","Z",
+      '\u8eca', '\U99AC', '\U8C61', '\U58EB','\U5C07','\U70AE','\U5352'
+     ),ncol=4)
+
+##empty board
+  board <- matrix('.',11,9, 
+		          dimnames = list(c(1:11),1:9))
+
+##print standard board
+  p <- function(q){
+          print(q,quote=F)
+          cat('\n',' ',sprintf('%s',1:9),'\n')
+                  }	
