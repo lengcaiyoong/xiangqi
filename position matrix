@@ -19,3 +19,11 @@ q[grep(i,q)] <- paste('#',i,grep(i,q),'#',sep='')
 q[6,] <- rep('=',9)
 p(q)
 }
+
+
+pp4 <- chg_c <- function(q){
+	for (i in 1:7 ){
+	q[grep(qizi[,1][i],q)] <- qizi[,2][i]   #red
+	#q[grep(qizi[,3][i],q)] <- qizi[,4][i]  #black
+} 
+p(q)} #show chinese unicode
