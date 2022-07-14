@@ -22,7 +22,7 @@
 
 
 ##print fx
-  p <- function(q=L[[length(L)]],c=F,i=NA,ch=''){
+  p <- function(q=L[[length(L)]],i=NA,c=F,ch=''){
 	#c: clean board
 	#i: position of chess
 	#ch: chinese character (1:red/2:black)
