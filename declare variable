@@ -96,7 +96,7 @@ mv_GUI <- function(){
 
 ##Declare working board
   q <- qipu
-  L <- list(q)	
+  L <- list()	
 
 ##start game
-start ='L <- append(L,list(q)); p() ; mv_GUI() -> q'
+start ='L <- append(L,list(q)); p() ; mv_GUI() -> q ; L <- append(L,list(q)) '
