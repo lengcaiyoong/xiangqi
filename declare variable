@@ -26,3 +26,11 @@
           print(q,quote=F)
 #          cat('\n',' ',sprintf('%s',9:1),'\n')
                   }
+
+
+##clean print 
+  clnp <- function(q){
+		rownames(q) <- rep('',10)
+		colnames(q) <- rep('',9)
+          print(q,quote=F)
+                  }
