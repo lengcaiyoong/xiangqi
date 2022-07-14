@@ -1,3 +1,4 @@
+qizi = 
 matrix(
 c(
 tolower(c("C","M","X","S","J","P","b")),
