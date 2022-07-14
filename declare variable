@@ -15,10 +15,10 @@
   qipu <- board
 	qipu[1,] <- qizi[,3][c(1:5,4:1)]
 	qipu[c(17,77)] <- qizi[20]
-	qipu[4,] <- qizi[21]
+	qipu[seq(4,94,20)] <- qizi[21]
 	qipu[10,] <- qizi[,1][c(1:5,4:1)]
 	qipu[c(13,73)] <- qizi[6]
-	qipu[6,] <- qizi[7]
+	qipu[seq(6,96,20)] <- qizi[7]
 
 
 ##print standard board
