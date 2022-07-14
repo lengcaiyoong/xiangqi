@@ -48,3 +48,55 @@
 #		colnames(q) <- rep('',9)
 #          print(q,quote=F)
 #                  }
+
+
+
+##move chess
+#classic
+	#refer https://youtu.be/d5jAHK_hbrI
+  function(i,p,d,s){
+	#i: qizi
+	#p: position
+	#d: direction (jing, tui, ping)
+	#s: count of steps
+	}
+
+#GUI move chess
+
+mv_GUI <- function(){
+
+	#ask for input variable
+		input = readline(prompt = "ENTER: ")
+
+	#split input variable
+		 ix1 <- unlist(strsplit(input,' '))[1]
+			i <- unlist(strsplit(ix1,''))[1]
+			x1 <- as.integer(unlist(strsplit(ix1,''))[2])
+			if (is.na(x1)) {
+				x <- grep(i,q)
+					}else{
+				x <- grep(i,q)[x1]}
+		 ss <- unlist(strsplit(input,' '))[2]
+			s <- unlist(strsplit(ss,''))
+
+	#new position
+		q[
+		length(s[s=='a'])*(-10)+
+		length(s[s=='d'])*(10)+
+		length(s[s=='w'])*(-1)+
+		length(s[s=='s'])+
+		x] <- i
+	
+	#erase
+		q[x] <- '.'
+
+	p(q)	#print
+			}
+
+
+##Declare working board
+  q <- qipu
+  L <- list(q)	
+
+##start game
+start ='L <- append(L,list(q)); p() ; mv_GUI() -> q'
