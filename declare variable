@@ -26,3 +26,20 @@
           print(q,quote=F)
           cat('\n',' ',sprintf('%s',9:1),'\n')
                   }
+
+
+###TYPE 2 BOARD and QIPU
+
+##empty board type 2
+#  board <- matrix('.',11,9, 
+#		          dimnames = list(c('',2:11),1:9))
+#  board[1,] <- ''
+
+##board with chess type 2
+#  qipu <- board
+#	qipu[2,] <- qizi[,3][c(1:5,4:1)]
+#	qipu[c(15,81)] <- qizi[20]
+#	qipu[5,] <- qizi[21]
+#	qipu[11,] <- qizi[,1][c(1:5,4:1)]
+#	qipu[c(20,86)] <- qizi[6]
+#	qipu[8,] <- qizi[7]
