@@ -21,16 +21,26 @@
 	qipu[seq(7,97,20)] <- qizi[7]
 
 
-##print without quotes
-  p <- function(q){
-          print(q,quote=F)
-#          cat('\n',' ',sprintf('%s',9:1),'\n')
+##print fx
+  p <- function(q=L[[length(L)]],c=F,i=''){
+	#c: clean board
+	#i: position of chess
+    if(c==T) rownames(q) <- rep('',10)
+    if( i %in% unique(c(qizi))) (q[grep(i,q)] <- paste(q[grep(i,q)],1:length(grep(i,q)),sep=''))
+     print(q,quote=F)
+#          cat('\n',' ',sprintf('%s',9:1),'\n')	#spacing
                   }
 
+
+##print without quotes
+#  p <- function(q){
+#          print(q,quote=F)
+#          cat('\n',' ',sprintf('%s',9:1),'\n')
+#                  }
 
 ##clean print 
-  clnp <- function(q){
-		rownames(q) <- rep('',10)
-		colnames(q) <- rep('',9)
-          print(q,quote=F)
-                  }
+#  clnp <- function(q){
+#		rownames(q) <- rep('',10)
+#		colnames(q) <- rep('',9)
+#          print(q,quote=F)
+#                  }
