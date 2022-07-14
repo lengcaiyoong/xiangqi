@@ -21,7 +21,7 @@
 	qipu[seq(7,97,20)] <- qizi[7]
 
 
-##print standard board
+##print without quotes
   p <- function(q){
           print(q,quote=F)
 #          cat('\n',' ',sprintf('%s',9:1),'\n')
