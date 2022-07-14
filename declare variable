@@ -6,13 +6,23 @@
       "C","M","X","S","J","P","Z",
       '\u8eca', '\U99AC', '\U8C61', '\U58EB','\U5C07','\U70AE','\U5352'
      ),ncol=4)
-     
+
 ##empty board
   board <- matrix('.',10,9, 
 		          dimnames = list(c(1:10),1:9))
 
+##board with chess
+  qipu <- board
+	qipu[1,] <- qizi[,3][c(1:5,4:1)]
+	qipu[c(17,77)] <- qizi[20]
+	qipu[4,] <- qizi[21]
+	qipu[10,] <- qizi[,1][c(1:5,4:1)]
+	qipu[c(13,73)] <- qizi[6]
+	qipu[6,] <- qizi[7]
+
+
 ##print standard board
   p <- function(q){
           print(q,quote=F)
-          cat('\n',' ',sprintf('%s',1:9),'\n')
+          cat('\n',' ',sprintf('%s',9:1),'\n')
                   }
