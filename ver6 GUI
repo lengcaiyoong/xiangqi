@@ -158,7 +158,7 @@ for (i in grep("[[:upper:]]",m)) {
 		col='black')
 			}	#plot LETTERS
 
-rect(0, seq(0,1,1/11)[6],1,seq(0,1,1/11)[7], col='lightblue') #river
+#rect(0, seq(0,1,1/11)[6],1,seq(0,1,1/11)[7], col='lightblue') #river
 
 }
 
