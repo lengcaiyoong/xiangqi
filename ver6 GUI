@@ -1,0 +1,168 @@
+
+
+
+##all chess
+  qizi <- matrix(
+    c(
+      tolower(c("C","M","X","S","J","P","b")),
+      '\u8eca','\U99AC','\U76F8','\U4ED5','\U5E25','\U70AE','\U5175',
+      "C","M","X","S","J","P","Z",
+      '\u8eca', '\U99AC', '\U8C61', '\U58EB','\U5C07','\U70AE','\U5352'
+     ),ncol=4)
+
+##empty board
+  board <- matrix('.',10,9, 
+		          dimnames = list(c(1:10),1:9))
+
+##board with chess
+  qipu <- board
+	qipu[1,] <- qizi[,3][c(1:5,4:1)]
+	qipu[c(13,73)] <- qizi[20]
+	qipu[seq(4,94,20)] <- qizi[21]
+	qipu[10,] <- qizi[,1][c(1:5,4:1)]
+	qipu[c(18,78)] <- qizi[6]
+	qipu[seq(7,97,20)] <- qizi[7]
+
+
+##print fx
+  p <- function(q=L[[length(L)]],i=NA,c=F,ch=''){
+	#c: clean board
+	#i: position of chess
+	#ch: chinese character (1:red/2:black)
+	    if(c==T) rownames(q) <- rep('',10)
+	    if(i %in% unique(c(q))) (q[grep(i,q)] <- paste(q[grep(i,q)],1:length(grep(i,q)),sep=''))
+	    if(ch==1) for (i in 1:7 ){q[grep(qizi[,1][i],q)] <- qizi[,2][i]}
+	    if(ch==2) for (i in 1:7 ){q[grep(qizi[,3][i],q)] <- qizi[,4][i]}
+	 print(q,quote=F)
+#        cat('\n',' ',sprintf('%s',9:1),'\n')	#spacing
+                  }
+
+
+
+##print without quotes
+#  p <- function(q){
+#          print(q,quote=F)
+#          cat('\n',' ',sprintf('%s',9:1),'\n')
+#                  }
+
+##clean print 
+#  clnp <- function(q){
+#		rownames(q) <- rep('',10)
+#		colnames(q) <- rep('',9)
+#          print(q,quote=F)
+#                  }
+
+
+
+##move chess
+#classic
+	#refer https://youtu.be/d5jAHK_hbrI
+  function(i,p,d,s){
+	#i: qizi
+	#p: position
+	#d: direction (jing, tui, ping)
+	#s: count of steps
+	}
+
+#GUI move chess
+
+mvG <- function(){
+	p()
+
+	#ask for input variable
+		input = readline(prompt = "ENTER: ")
+
+	#split input variable
+		 ix1 <- unlist(strsplit(input,' '))[1]
+			i <- unlist(strsplit(ix1,''))[1]
+			x1 <- as.integer(unlist(strsplit(ix1,''))[2])
+			if (is.na(x1)) {
+				x <- grep(i,q)
+					}else{
+				x <- grep(i,q)[x1]}
+		 ss <- unlist(strsplit(input,' '))[2]
+			s <- unlist(strsplit(ss,''))
+
+	#plot new position
+		q[
+		length(s[s=='a'])*(-10)+
+		length(s[s=='d'])*(10)+
+		length(s[s=='w'])*(-1)+
+		length(s[s=='s'])+
+		x] <<- i
+	
+	#erase
+		q[x] <<- '.'
+
+	#save in L
+		L <<- append(L,list(q))
+
+	#print	
+		p(q)
+		plotq(q)
+			}
+
+
+##Declare working board
+  q <- qipu
+  L <- list(qipu)	
+
+
+
+
+
+############
+###plot chess
+plotq <- function(m){
+
+
+x <- seq(0,1+(2/9),1/9)	#set X-axis interval
+y <- seq(0,1,1/11)	#set Y-axis interval
+
+plot(x,y,xlim=c(0,1),ylim=c(0,0.9) , type='n',ann=F)
+abline(h=y, v=x, lty=3)	#set blank graph
+
+plot_chess <- function(i,col){
+rect(
+
+	(x[col(m)+1])[i] - 1/9,
+	(y[row(m)[nrow(m):1,]+1])[i] - 1/11,
+
+	(x[col(m)+1])[i],
+	(y[row(m)[nrow(m):1,]+1])[i],
+
+	col=col
+	)
+} #plot fx
+
+
+for (i in grep("[[:lower:]]",m)) {
+	col <- 'red'
+	plot_chess(i,col) 	#plot lowercase chess
+	points(
+		((x[col(m)+1])[i])-(1/9/2),
+		((y[row(m)[nrow(m):1,]+1])[i])-(1/11/2),
+#		pch= (grep(m[i],letters) + 96),	#lwcse
+		pch= qizi[ grep(m[i],qizi)+7 ],	#chs
+		col='white')
+			}	#plot letters
+
+for (i in grep("[[:upper:]]",m)) {
+	col <- 'grey'
+	plot_chess(i,col)	#plot uppercase chess
+	points(
+		((x[col(m)+1])[i])-(1/9/2),
+		((y[row(m)[nrow(m):1,]+1])[i])-(1/11/2),
+#		pch=(grep(m[i],LETTERS) + 64),	#upcse
+		pch= qizi[ grep(m[i],qizi)+7 ],	#chs
+		col='black')
+			}	#plot LETTERS
+
+rect(0, seq(0,1,1/11)[6],1,seq(0,1,1/11)[7], col='lightblue') #river
+
+}
+
+
+
+##Start Game
+cat('\n','START with mvG()','\n','\n')
