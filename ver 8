@@ -32,7 +32,7 @@
 #	    if(i %in% unique(c(q))) (q[grep(i,q)] <- paste(q[grep(i,q)],1:length(grep(i,q)),sep=''))
 	    if(ch==1) for (i in 1:7 ){q[grep(qizi[,1][i],q)] <- qizi[,2][i]}
 	    if(ch==2) for (i in 1:7 ){q[grep(qizi[,3][i],q)] <- qizi[,4][i]}
-	 print(q,quote=F)
+	 if(seq == F) print(q,quote=F)
 #        cat('\n',' ',sprintf('%s',9:1),'\n')	#spacing
 	if (seq == T){
 			 	L2 = list()
