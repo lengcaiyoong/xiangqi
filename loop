@@ -1,0 +1,19 @@
+#loop
+
+F =c('
+p-3
+P2-3
+m2+2-10
+M2+2-10
+c2+1
+C2-10
+c2-50
+C2+6
+')
+
+F <- strsplit(F,'\n')[[1]][-1]
+
+
+for(f in F){
+	mv(f,forloop=T)
+}
