@@ -66,17 +66,27 @@
 
 
 #move chess
-   mv <- function(x){
-		x <- as.expression(substitute(x))
+ mv <- function(x){
+	#declare variable x,i
+		x <- as.expression(substitute(x))	#insert parameter w/o quotes
+		i <- strsplit(toString(x),' ' )[[1]][1]	#eg. c12
+			i1 <- substr(deparse(x),12,12)	#eg. c
+			i2 <- as.integer(substr(i,2,nchar(i)))	#eg. 12
+	#get o,n
+	     if( grepl('[A-Za-z]',i))(
+		o <- grep(i1,q)[i2]
+			)else{
 		o <- as.integer( strsplit(toString(x),' ' )[[1]][1] )
-		n <- eval(x)
-			#    print(o)
-			#    print(n)
-		    q[n] <<- q[o]
-		    q[o] <<- '.'
-		    L <<- append(L,list(q))
-		    p(q)
-		 		}
+		  }
+		n <- o + eval( parse(text = strsplit(toString(x),' ' )[[1]][-1] ) )
+	#    print(o)
+	#    print(n)
+ 	#modify chess
+	    q[n] <<- q[o]
+	    q[o] <<- '.'
+	    L <<- append(L,list(q))
+	    p(q)
+}
 
 
 ##Declare working board
