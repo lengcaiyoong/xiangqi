@@ -1,6 +1,6 @@
 #loop
 
-F =c('
+loop_data =c('
 	p-3
 	P2-3
 	m2+2-10
@@ -11,12 +11,12 @@ F =c('
 	C2+6
 ')
 
-F <- strsplit(F,'\n')[[1]][-1]
+loop_data <- strsplit(loop_data,'\n')[[1]][-1]
 
 p(q)
 
-for(f in F){
-	mv(f,forloop=T)
+for(item in loop_data){
+	mv(item,forloop=T)
 }
 
 p(q)
