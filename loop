@@ -1,5 +1,7 @@
 #loop
 
+
+
 F =c('
 p-3
 P2-3
@@ -13,7 +15,46 @@ C2+6
 
 F <- strsplit(F,'\n')[[1]][-1]
 
+p(q)
 
 for(f in F){
 	mv(f,forloop=T)
+}
+
+p(q)
+
+
+
+
+#########
+
+
+#move chess
+ mv <- function(x,forloop=F){
+	#declare variable x,i
+		x <- as.expression(substitute(x))	#insert parameter w/o quotes
+		if (forloop==T) x <- parse(text=x)
+		i <- strsplit(toString(x),' ' )[[1]][1]	#eg. c12
+			i1 <- substr(toString(x),1,1)	#eg. c
+			if(nchar(i)<2){i2 <- 1}else{i2 <- as.integer(substr(i,2,nchar(i)))}  #eg. 12, default=1
+	#inverse matrix if lwcse
+		if( sum(grepl(i1,letters))>0 ) q <<- q[10:1,]
+	#get o,n
+	     if( grepl('[A-Za-z]',i))(
+		o <- grep(i1,q)[i2]
+			)else{
+		o <- as.integer( strsplit(toString(x),' ' )[[1]][1] )
+		  }
+		n <- o + eval(parse(text=paste( strsplit(toString(x),' ' )[[1]][-1],collapse='' )))
+	    #print(o)
+	    #print(n)
+ 	#modify chess
+	    q[n] <<- q[o]
+	    q[o] <<- '.'
+	#inverse matrix if lwcse
+		if( sum(grepl(i1,letters))>0 ) q <<- q[10:1,]
+	#save, output
+	    L <<- append(L,list(q))
+
+	    if(forloop==F) p(q)
 }
