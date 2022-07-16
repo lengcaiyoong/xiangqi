@@ -1,4 +1,4 @@
-
+##Enter Data
 loop_data =c('
 	p2-30
 	P2-30
@@ -9,14 +9,14 @@ loop_data =c('
 	c2-50
 	C2+6
 ')
-
 loop_data <- strsplit(loop_data,'\n')[[1]][-1]
 
-p(q)
+
+##run Forloop
 
 for(item in loop_data){
 	mv(item,forloop=T)
-}
+	}
 
 p(q)
 
