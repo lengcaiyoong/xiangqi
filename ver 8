@@ -26,6 +26,7 @@
 	#c: clean board
 	#i: position of chess
 	#ch: chinese character (1:red/2:black)
+	#seq: view moving seq with *
 	    if(c==T) rownames(q) <- rep('',10)
 	     i <- as.character(substitute(i))
  	    if(i %in% unique(c(q))) q[q==i] <- grep(i,q)
