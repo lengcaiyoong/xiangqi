@@ -21,6 +21,13 @@ for(item in loop_data){
 }
 
 
+##View moving seq
+plotseq <- function(){
+for (i in 1:length(L)){
+	x = readline(prompt = "next? y/n ")
+	if(x == 'n') break
+	plotq(L[[i]])
+}}
 
 
 #################
