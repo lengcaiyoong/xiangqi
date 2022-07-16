@@ -71,7 +71,8 @@
 		x <- as.expression(substitute(x))	#insert parameter w/o quotes
 		i <- strsplit(toString(x),' ' )[[1]][1]	#eg. c12
 			i1 <- substr(deparse(x),12,12)	#eg. c
-			i2 <- as.integer(substr(i,2,nchar(i)))	#eg. 12
+			if(nchar(i)<2){i2 <- 1}else{i2 <- as.integer(substr(i,2,nchar(i)))}  #eg. 12, default=1
+
 	#get o,n
 	     if( grepl('[A-Za-z]',i))(
 		o <- grep(i1,q)[i2]
