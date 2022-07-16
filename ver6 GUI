@@ -66,6 +66,8 @@
 	#s: count of steps
 	}
 
+
+
 #GUI move chess
 
 mvG <- function(){
