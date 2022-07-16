@@ -45,35 +45,11 @@
 			L2 <- append(L2, L[1])
 			print(L2,quote=F)}}
 
-##print without quotes
-#  p <- function(q){
-#          print(q,quote=F)
-#          cat('\n',' ',sprintf('%s',9:1),'\n')
-#                  }
-
-##clean print 
-#  clnp <- function(q){
-#		rownames(q) <- rep('',10)
-#		colnames(q) <- rep('',9)
-#          print(q,quote=F)
-#                  }
-
-
-
-##move chess
-#classic
-	#refer https://youtu.be/d5jAHK_hbrI
-  function(i,p,d,s){
-	#i: qizi
-	#p: position
-	#d: direction (jing, tui, ping)
-	#s: count of steps
-	}
-
-
 
 #move chess
  mv <- function(x,forloop=F){
+ 	#x	: (eg) 18+2 | P-10 | Z2+1
+	#forloop: refer mv_loop	
 	#declare variable x,i
 	   if (forloop==T) {x <- parse(text=x)}else{
 		x <- as.expression(substitute(x))	#insert parameter w/o quotes
@@ -118,6 +94,7 @@
 ###plot chess
 plotq <- function(m=q){
 
+#PLOT chess in graphic
 
 x <- seq(0,1+(2/9),1/9)	#set X-axis interval
 y <- seq(0,1,1/11)	#set Y-axis interval
@@ -168,6 +145,11 @@ for (i in grep("[[:upper:]]",m)) {
 
 ###run loop
 mv_loop <- function(loop_data){
+	#MOVE chess at once
+	#loop_data = c('
+	#P2-20
+	#J+1
+	#')
 	loop_data <- strsplit(loop_data,'\n')[[1]][-1]	#structured data
 
 	for(item in loop_data){	#for loop
@@ -178,6 +160,7 @@ mv_loop <- function(loop_data){
 
 ###view moving seq in plot
 plotseq <- function(){
+	#Plot L in graphic respectively
 for (i in 1:length(L)){
 	x = readline(prompt = "next? y/n ")
 	if(x == 'n') break
