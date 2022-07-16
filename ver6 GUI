@@ -25,12 +25,14 @@
 
 
 ##print fx
-  p <- function(q=L[[length(L)]],i=NA,c=F,ch=''){
+  p <- function(i=NA,q=L[[length(L)]],c=F,ch=''){
 	#c: clean board
 	#i: position of chess
 	#ch: chinese character (1:red/2:black)
 	    if(c==T) rownames(q) <- rep('',10)
-	    if(i %in% unique(c(q))) (q[grep(i,q)] <- paste(q[grep(i,q)],1:length(grep(i,q)),sep=''))
+	     i <- as.character(substitute(i))
+ 	    if(i %in% unique(c(q))) q[q==i] <- grep(i,q)
+#	    if(i %in% unique(c(q))) (q[grep(i,q)] <- paste(q[grep(i,q)],1:length(grep(i,q)),sep=''))
 	    if(ch==1) for (i in 1:7 ){q[grep(qizi[,1][i],q)] <- qizi[,2][i]}
 	    if(ch==2) for (i in 1:7 ){q[grep(qizi[,3][i],q)] <- qizi[,4][i]}
 	 print(q,quote=F)
