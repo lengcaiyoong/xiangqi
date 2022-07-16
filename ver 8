@@ -165,6 +165,25 @@ for (i in grep("[[:upper:]]",m)) {
 }
 
 
+###run loop
+mv_loop <- function(loop_data){
+	loop_data <- strsplit(loop_data,'\n')[[1]][-1]	#structured data
+
+	for(item in loop_data){	#for loop
+	mv(item,forloop=T)
+}
+}
+
+
+###view moving seq in plot
+plotseq <- function(){
+for (i in 1:length(L)){
+	x = readline(prompt = "next? y/n ")
+	if(x == 'n') break
+	plotq(L[[i]])
+}}
+
+
 ##Start Game
 writeClipboard('mv(')
 cat('\n','START with mv()','\n','\n')
